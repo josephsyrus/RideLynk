@@ -1,0 +1,105 @@
+body{
+    font-family: Arial;
+}
+
+.toggle-btn {
+    width: 70px;
+    height: 35px;
+    background-color: gray;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.toggle-btn::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3.5px;
+    left: 3px;
+    transition: transform 0.3s;
+}
+.active {
+    background-color: green;
+}
+.active::before {
+    transform: translateX(35px);
+}
+
+
+.host-join{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.host-join p {
+    font-size: 20px;
+}
+
+.content-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+#yourRides{
+    padding:15px 25px;
+    border-radius: 30px;
+    border-style: none;
+
+}
+
+.info-box{
+    border-radius: 20px;
+    width:100%;
+    /* height:80vh; */
+    padding:50px 0px 70px 50px;
+    box-sizing: border-box;
+    background-color: rgb(206, 206, 206);
+}
+
+#hostInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+#joinInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.input-box{
+    width:300px;
+    padding:10px 10px 10px 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border-style: none;
+    margin-bottom: 10px;
+    background-color: rgb(241, 241, 241);
+}
+
+.info-content h3{
+    margin-bottom:5px;
+    margin-left:0px;
+}
+
+
+.getButton{
+    padding:10px 25px;
+    border-radius: 30px;
+    border-style: none;
+    margin-top: 20px;
+}
