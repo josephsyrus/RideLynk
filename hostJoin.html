@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>host/join page</title>
+    <link rel="stylesheet" href="hostJoinStyles.css">
+</head>
+<body>
+    <div id="mainContainer">
+        <div class="content-header">
+            <div class="host-join">
+                <div><p>Host</p></div>
+                <div class="toggle-btn" id="toggleBtn"></div>
+                <div><p>Join</p></div>
+            </div>
+    
+            <div class="your-rides">
+                <button id="yourRides">Your Rides</button>
+            </div>
+        </div>
+        <div class="info-content">
+            <div id="hostInfo" class="info-box">
+                <h1>Host A Ride!</h1>
+                <div>
+                    <h3>Pickup Location:</h3>
+                    <select class="input-box" id="pickup-select" autocomplete="off">
+                        <option value="" selected disabled>Select the Pickup Location</option>
+                        <option value="maingate">VIT Vellore Maingate</option>
+                        <option value="railway">Katpadi Railway Station</option>
+                        <option value="chennaiAirport">Chennai Airport</option>
+                        <option value="bangaloreAirport">Bangalore Airport</option>
+                        <option value="pvr">PVR Cinemas</option>
+                        <option value="newBusStand">New Bus Stand</option>
+                        <option value="ChitoorBusStand">Chitoor Bus Stand</option>
+    
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Destination Location:</h3>
+                    <select class="input-box" id="destination-select" autocomplete="off">
+                        <option value="" selected disabled>Select the Pickup Location</option>
+                        <option value="maingate">VIT Vellore Maingate</option>
+                        <option value="railway">Katpadi Railway Station</option>
+                        <option value="chennaiAirport">Chennai Airport</option>
+                        <option value="bangaloreAirport">Bangalore Airport</option>
+                        <option value="pvr">PVR Cinemas</option>
+                        <option value="newBusStand">New Bus Stand</option>
+                        <option value="ChitoorBusStand">Chitoor Bus Stand</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Date:</h3>
+                    <input type="date" class="input-box" id="dataInput" autocomplete="off">
+                </div>
+
+                <div>
+                    <h3>Time:</h3>
+                    <input type="time" class="input-box" id="timerInput" autocomplete="off">
+                </div>
+
+                <div>
+                    <h3>Vehicle Type:</h3>
+                    <select class="input-box" id="vehicleType" autocomplete="off">
+                        <option value="" selected disabled>Select the Vehicle Type</option>
+                        <option value="maingate">Auto</option>
+                        <option value="railway">Sedan</option>
+                        <option value="chennaiAirport">SUV</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Number of Passengers:</h3>
+                    <select class="input-box" id="passengerCount" autocomplete="off">
+                        <option value="">Select the number of passengers</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Price per passenger:</h3>
+                    <input type="search" class="input-box" id="price">
+                </div>
+
+                <div>
+                    <button class="getButton">Create the Ride</button>         
+                </div>
+
+            </div>
+
+            <div id="joinInfo" class="info-box">
+                <h1>Join A Ride!</h1>
+                <div>
+                    <h3>Pickup Location:</h3>
+                    <select class="input-box" id="pickup-select" autocomplete="off">
+                        <option value="" selected disabled>Select the Pickup Location</option>
+                        <option value="maingate">VIT Vellore Maingate</option>
+                        <option value="railway">Katpadi Railway Station</option>
+                        <option value="chennaiAirport">Chennai Airport</option>
+                        <option value="bangaloreAirport">Bangalore Airport</option>
+                        <option value="pvr">PVR Cinemas</option>
+                        <option value="newBusStand">New Bus Stand</option>
+                        <option value="ChitoorBusStand">Chitoor Bus Stand</option>
+    
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Destination Location:</h3>
+                    <select class="input-box" id="destination-select" autocomplete="off">
+                        <option value="" selected disabled>Select the Pickup Location</option>
+                        <option value="maingate">VIT Vellore Maingate</option>
+                        <option value="railway">Katpadi Railway Station</option>
+                        <option value="chennaiAirport">Chennai Airport</option>
+                        <option value="bangaloreAirport">Bangalore Airport</option>
+                        <option value="pvr">PVR Cinemas</option>
+                        <option value="newBusStand">New Bus Stand</option>
+                        <option value="ChitoorBusStand">Chitoor Bus Stand</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h3>Date:</h3>
+                    <input type="date" class="input-box" id="dataInput" autocomplete="off">
+                </div>
+
+                <div>
+                    <h3>Time:</h3>
+                    <input type="time" class="input-box" id="timerInput" autocomplete="off">
+                </div>
+                
+                <div>
+                    <h3>Vehicle Type Preferred:</h3>
+                    <select class="input-box" id="vehicleType" autocomplete="off">
+                        <option value="" selected disabled>Select the Vehicle Type</option>
+                        <option value="maingate">Auto</option>
+                        <option value="railway">Sedan</option>
+                        <option value="chennaiAirport">SUV</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button class="getButton">Search Rides</button>         
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="hostJoinScript.js"></script>
+</body>
+</html>
