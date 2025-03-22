@@ -1,0 +1,26 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-container{
+    width:99vw;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+
+.sub-container{
+    height: 98vh;
+    background-color: rgb(197, 197, 197);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#host-join-container{
+    flex:1;
+}
+
+#your-rides-container{
+    flex:1;
+}
