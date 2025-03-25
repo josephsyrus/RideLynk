@@ -17,6 +17,58 @@ if (userData) {
   profileEmail.textContent = "Not logged in";
 }
 
+const userEmail=userData.email;
+
+async function fetchHostedRides() {
+  if (!userData || !userData.email) {
+      hostedRides.innerHTML = "<p>You are not logged in.</p>";
+      return;
+  }
+
+  try {
+      const response = await fetch(`/getHostedRides?email=${encodeURIComponent(userData.email)}`);
+      const data = await response.json();
+
+
+      if (data.error) {
+          hostedRides.innerHTML += `<p>${data.error}</p>`;
+          return;
+      }
+
+      if (data.length === 0) {
+          hostedRides.innerHTML += "<p>No rides found.</p>";
+      } else {
+          data.forEach(ride => {
+              const rideDiv = document.createElement("div");
+              rideDiv.classList.add("ride-card");
+
+              rideDiv.innerHTML = `
+                  <p><strong>From:</strong> ${ride.pickup_location_host}</p>
+                  <p><strong>To:</strong> ${ride.destination_location_host}</p>
+                  <p><strong>Date:</strong> ${new Date(ride.date_host).toLocaleDateString()}</p>
+                  <p><strong>Pickup Time:</strong> ${ride.pickup_time_host}</p>
+                  <p><strong>Vehicle Type:</strong> ${ride.vehicle_type_host}</p>
+                  <p><strong>Passenger Count:</strong> ${ride.passenger_count_host}</p>
+                  <p><strong>Price Per Passenger:</strong> ₹${ride.price_per_passenger}</p>
+              `;
+
+              hostedRides.appendChild(rideDiv);
+          });
+      }
+  } catch (error) {
+      console.error("Error fetching rides:", error);
+      hostedRides.innerHTML = "<p>Failed to load rides.</p>";
+  }
+}
+fetchHostedRides();
+
+
+
+
+
+
+
+
 profileIcon.addEventListener("click", function (e) {
   e.stopPropagation();
   profileDropdown.classList.toggle("active");
