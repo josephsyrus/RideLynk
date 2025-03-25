@@ -7,7 +7,6 @@ const app=express()
 app.use(express.static(__dirname))
 app.use(express.urlencoded({extended:true}))
 
-//replace this with the connect string form mongodb atlas
 mongoose.connect('mongodb+srv://mongomongo:HD4RXpshU3JbHJ5x@cluster0.8dsmy.mongodb.net/RideLynk')
 const db=mongoose.connection
 db.once('open',()=>{
@@ -68,7 +67,6 @@ app.post('/post',async(req,res)=>{
             res.redirect('/home.html');
         } catch (error) {
             console.error("Error saving to database:", error);
-            // res.status(500).send("Internal Server Error");
             res.send(`
                 <script>
                     alert('Enter all the information');
@@ -95,7 +93,7 @@ app.post('/post',async(req,res)=>{
         try {
             await join.save();
             console.log("Data saved:", join);
-            res.redirect('/home.html');
+            res.redirect('/viewRides.html');
         } catch (error) {
             console.error("Error saving to database:", error);
             res.send(`
@@ -110,4 +108,15 @@ app.post('/post',async(req,res)=>{
 
 app.listen(port,()=>{
     console.log("Server Started");
+})
+
+app.get('/getRides', async(req,res)=>{
+    try{
+        const rides=await Host.find({});
+        res.json(rides);
+    }
+    catch(error){
+        console.error("Error fetching rides", error);
+        res.status(500).send("Internal Server Error");
+    }
 })
