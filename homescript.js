@@ -22,7 +22,6 @@ if (userData) {
 profileIcon.addEventListener("click", function (e) {
   e.stopPropagation();
   profileDropdown.classList.toggle("active");
-  console.log("Profile icon clicked, dropdown toggled");
 });
 
 document.addEventListener("click", function (e) {
