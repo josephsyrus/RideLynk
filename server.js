@@ -14,6 +14,8 @@ db.once('open',()=>{
 }) 
 
 const HostSchema=new mongoose.Schema({
+    username:String,
+    email:String,
     pickup_location_host:String,
     destination_location_host:String,
     date_host:Date,
@@ -43,7 +45,9 @@ app.post('/post',async(req,res)=>{
     console.log("Recieved POST request: ",req.body);
 
     if(req.body.pickup_location_host){
-        const {pickup_location_host,
+        const {username,
+            email,
+            pickup_location_host,
             destination_location_host,
             date_host,
             pickup_time_host,
@@ -53,6 +57,8 @@ app.post('/post',async(req,res)=>{
         }=req.body;
     
         const host=new Host({
+            username,
+            email,
             pickup_location_host,
             destination_location_host,
             date_host: new Date(date_host),

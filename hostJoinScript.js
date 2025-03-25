@@ -64,3 +64,27 @@ function handleToggle(state) {
     }
 }
 
+
+hostInfo.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+    if (userData) {
+        const usernameInput = document.createElement('input');
+        usernameInput.type = 'hidden';
+        usernameInput.name = 'username';
+        usernameInput.value = userData.name;
+        hostInfo.appendChild(usernameInput);
+
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = userData.email;
+        hostInfo.appendChild(emailInput);
+    }
+
+
+    hostInfo.submit();
+});
+
+

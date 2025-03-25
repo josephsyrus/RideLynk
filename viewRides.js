@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p><strong>Vehicle:</strong> ${ride.vehicle_type_host}</p>
                 <p><strong>Seats:</strong> ${ride.passenger_count_host}</p>
                 <p><strong>Price per Passenger:</strong> ₹${ride.price_per_passenger}</p>
+                <p><strong>Name:</strong> ${ride.username}</p>
+                <p><strong>Email:</strong>. ${ride.email}</p>
                 </div>
 
                 <div class="button-div">
-                <button class="join-btn" data-ride='${JSON.stringify(ride)}'>Join Ride</button>
+                <button class="join-btn" data-email="${ride.email}">Join Ride</button>
                 </div>
                 </div>
             `;
@@ -36,9 +38,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         document.querySelectorAll(".join-btn").forEach(button => {
             button.addEventListener("click", (event) => {
-                const rideData = JSON.parse(event.target.dataset.ride);
-                console.log("Joining ride:", rideData);
-                window.location.href="joinRide.html";
+                const email=event.target.dataset.email;
+                const subject=encodeURIComponent("Cab Sharing Request");
+                const body=encodeURIComponent("Hey! I want to share this cab with you.");
+                window.location.href=`mailto:${email}?subject=${subject}&body=${body}`;
             });
         });
 
