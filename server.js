@@ -127,3 +127,20 @@ app.get('/getRides', async(req,res)=>{
         res.status(500).send("Internal Server Error");
     }
 })
+
+
+///testing
+app.get('/getHostedRides', async (req, res) => {
+    try {
+        const { email } = req.query;
+        if (!email) {
+            return res.status(400).json({ error: "Email is required" });
+        }
+
+        const rides = await Host.find({ email: email });
+        res.json(rides);
+    } catch (error) {
+        console.error("Error fetching hosted rides", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
