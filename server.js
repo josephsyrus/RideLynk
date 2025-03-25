@@ -8,7 +8,7 @@ app.use(express.static(__dirname))
 app.use(express.urlencoded({extended:true}))
 
 //replace this with the connect string form mongodb atlas
-mongoose.connect('mongodb://127.0.0.1:27017/RideLynk')
+mongoose.connect('mongodb+srv://mongomongo:HD4RXpshU3JbHJ5x@cluster0.8dsmy.mongodb.net/RideLynk')
 const db=mongoose.connection
 db.once('open',()=>{
     console.log("Mongodb Connection Successful");
