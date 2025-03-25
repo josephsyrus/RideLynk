@@ -20,11 +20,11 @@
             </div>
         </div>
         <div class="info-content">
-            <div id="hostInfo" class="info-box">
+            <form id="hostInfo" class="info-box" action="/post" method="post">
                 <h1>Host A Ride!</h1>
                 <div>
                     <h3>Pickup Location:</h3>
-                    <select class="input-box" id="pickup-select" autocomplete="off">
+                    <select class="input-box" id="pickup-select" autocomplete="off" name="pickup_location_host">
                         <option value="" selected disabled>Select the Pickup Location</option>
                         <option value="maingate">VIT Vellore Maingate</option>
                         <option value="railway">Katpadi Railway Station</option>
@@ -39,7 +39,7 @@
 
                 <div>
                     <h3>Destination Location:</h3>
-                    <select class="input-box" id="destination-select" autocomplete="off">
+                    <select class="input-box" id="destination-select" autocomplete="off" name="destination_location_host">
                         <option value="" selected disabled>Select the Pickup Location</option>
                         <option value="maingate">VIT Vellore Maingate</option>
                         <option value="railway">Katpadi Railway Station</option>
@@ -53,27 +53,27 @@
 
                 <div>
                     <h3>Date:</h3>
-                    <input type="date" class="input-box" id="dataInput" autocomplete="off">
+                    <input type="date" class="input-box" id="dataInput" autocomplete="off" name="date_host">
                 </div>
 
                 <div>
                     <h3>Time:</h3>
-                    <input type="time" class="input-box" id="timerInput" autocomplete="off">
+                    <input type="time" class="input-box" id="timerInput" autocomplete="off" name="pickup_time_host">
                 </div>
 
                 <div>
                     <h3>Vehicle Type:</h3>
-                    <select class="input-box" id="vehicleType" autocomplete="off">
+                    <select class="input-box" id="vehicleType" autocomplete="off" name="vehicle_type_host">
                         <option value="" selected disabled>Select the Vehicle Type</option>
-                        <option value="maingate">Auto</option>
-                        <option value="railway">Sedan</option>
-                        <option value="chennaiAirport">SUV</option>
+                        <option value="auto">Auto</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
                     </select>
                 </div>
 
                 <div>
                     <h3>Number of Passengers:</h3>
-                    <select class="input-box" id="passengerCount" autocomplete="off">
+                    <select class="input-box" id="passengerCount" autocomplete="off" name="passenger_count_host">
                         <option value="">Select the number of passengers</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -86,20 +86,20 @@
 
                 <div>
                     <h3>Price per passenger:</h3>
-                    <input type="search" class="input-box" id="price">
+                    <input type="text" class="input-box" id="price" name="price_per_passenger">
                 </div>
 
                 <div>
-                    <button class="getButton">Create the Ride</button>         
+                    <button class="getButton" type="submit">Create the Ride</button>         
                 </div>
 
-            </div>
+            </form>
 
-            <div id="joinInfo" class="info-box">
+            <form id="joinInfo" class="info-box" action="/post" method="post">
                 <h1>Join A Ride!</h1>
                 <div>
                     <h3>Pickup Location:</h3>
-                    <select class="input-box" id="pickup-select" autocomplete="off">
+                    <select class="input-box" id="pickup-select" autocomplete="off" name="pickup_location_join">
                         <option value="" selected disabled>Select the Pickup Location</option>
                         <option value="maingate">VIT Vellore Maingate</option>
                         <option value="railway">Katpadi Railway Station</option>
@@ -114,7 +114,7 @@
 
                 <div>
                     <h3>Destination Location:</h3>
-                    <select class="input-box" id="destination-select" autocomplete="off">
+                    <select class="input-box" id="destination-select" autocomplete="off" name="destination_location_join">
                         <option value="" selected disabled>Select the Pickup Location</option>
                         <option value="maingate">VIT Vellore Maingate</option>
                         <option value="railway">Katpadi Railway Station</option>
@@ -128,26 +128,26 @@
 
                 <div>
                     <h3>Date:</h3>
-                    <input type="date" class="input-box" id="dataInput" autocomplete="off">
+                    <input type="date" class="input-box" id="dataInput" autocomplete="off" name="date_join">
                 </div>
 
                 <div>
                     <h3>Time:</h3>
-                    <input type="time" class="input-box" id="timerInput" autocomplete="off">
+                    <input type="time" class="input-box" id="timerInput" autocomplete="off" name="pickup_time_join">
                 </div>
                 
                 <div>
                     <h3>Vehicle Type Preferred:</h3>
-                    <select class="input-box" id="vehicleType" autocomplete="off">
+                    <select class="input-box" id="vehicleType" autocomplete="off" name="preferred_vehicle_join">
                         <option value="" selected disabled>Select the Vehicle Type</option>
-                        <option value="maingate">Auto</option>
-                        <option value="railway">Sedan</option>
-                        <option value="chennaiAirport">SUV</option>
+                        <option value="auto">Auto</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
                     </select>
                 </div>
 
                 <div>
-                    <button class="getButton">Search Rides</button>         
+                    <button class="getButton" type="submit">Search Rides</button>         
                 </div>
                 
             </div>
