@@ -88,3 +88,27 @@ hostInfo.addEventListener("submit", function (e) {
 });
 
 
+
+document.getElementById("joinInfo").addEventListener("submit", function (e) {
+  e.preventDefault(); 
+
+  const pickupLocation = document.querySelector("#joinInfo select[name='pickup_location_join']").value;
+  const destination = document.querySelector("#joinInfo select[name='destination_location_join']").value;
+  const date = document.querySelector("#joinInfo input[name='date_join']").value;
+
+  if (!pickupLocation || !destination || !date) {
+      alert("Please fill in all fields.");
+      return;
+  }
+
+  const searchData = {
+      pickup_location_join: pickupLocation,
+      destination_location_join: destination,
+      date_join: date
+  };
+
+  localStorage.setItem("searchData", JSON.stringify(searchData));
+
+  window.location.href = "viewRides.html";
+});
+

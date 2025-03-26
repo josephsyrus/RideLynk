@@ -2,7 +2,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const rideList = document.getElementById("rideList");
 
     try {
-        const response = await fetch("/getRides");
+        const userSearchData = JSON.parse(localStorage.getItem("searchData"));
+            if (!userSearchData) {
+            rideList.innerHTML = "<p>Please enter search criteria.</p>";
+            return;
+            }
+
+const queryString = new URLSearchParams(userSearchData).toString();
+const response = await fetch(`/getRides?${queryString}`);
         const rides = await response.json();
 
         if (rides.length === 0) {
