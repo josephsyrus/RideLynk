@@ -117,19 +117,29 @@ app.listen(port,()=>{
     console.log("Server Started");
 })
 
-app.get('/getRides', async(req,res)=>{
-    try{
-        const rides=await Host.find({});
+
+app.get('/getRides', async (req, res) => {
+    try {
+        const { pickup_location_join, destination_location_join, date_join } = req.query;
+
+        if (!pickup_location_join || !destination_location_join || !date_join) {
+            return res.status(400).json({ error: "Missing search parameters" });
+        }
+
+        const rides = await Host.find({
+            pickup_location_host: pickup_location_join,
+            destination_location_host: destination_location_join,
+            date_host: new Date(date_join)
+        });
+
         res.json(rides);
-    }
-    catch(error){
+    } catch (error) {
         console.error("Error fetching rides", error);
         res.status(500).send("Internal Server Error");
     }
-})
+});
 
 
-///testing
 app.get('/getHostedRides', async (req, res) => {
     try {
         const { email } = req.query;
