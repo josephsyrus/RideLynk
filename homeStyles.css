@@ -108,21 +108,88 @@ body {
 }
 
 .main-container {
-    width: 99vw;
+    width: 80vw;
+    align-items: center;
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-left: 9rem;
+    
 }
 
 .sub-container {
     height: 60vh;
-    width:40vw;
-    background-color: rgb(197, 197, 197);
-    border-radius: 10px;
+    width: 30vw;
+    background: linear-gradient(135deg, rgba(233,91,72,1) 0%, rgba(255,153,102,1) 100%);
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent;
 }
+
+/* Add a glowing effect */
+.sub-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Add a hover effect with a color shift and border animation */
+.sub-container:hover {
+    background: linear-gradient(135deg, rgba(255,102,0,1) 0%, rgba(233,91,72,1) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255,255,255,0.6);
+}
+
+/* Button Press Animation */
+.sub-container:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a futuristic glowing border animation */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+}
+
+.sub-container:hover::before {
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+}
+
+/* Add subtle glow effect */
+.sub-container:hover {
+    animation: borderGlow 1.5s infinite alternate;
+}
+
 
 #host-join-container {
     flex: 1;
@@ -132,9 +199,7 @@ body {
     flex: 1;
 }
 
-.sub-container:hover {
-    background-color: rgb(164, 164, 164);
-}
+
 
 #greetMsg {
     text-align: center;
