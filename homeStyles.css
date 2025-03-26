@@ -115,7 +115,8 @@ body {
 }
 
 .sub-container {
-    height: 85vh;
+    height: 60vh;
+    width:40vw;
     background-color: rgb(197, 197, 197);
     border-radius: 10px;
     display: flex;

@@ -39,6 +39,6 @@ profileDropdown.addEventListener("click", function (e) {
 
 logoutBtn.addEventListener("click", function () {
   localStorage.removeItem("user");
-  alert("You have been logged out!");
   window.location.href="index.html";
+  alert("You have been logged out!");
 });
